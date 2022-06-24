@@ -6,27 +6,23 @@
   Time: 2:46 AM
   To change this template use File | Settings | File Templates.
 --%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Java Standard Taglib</title>
 </head>
 <body>
 
     <h1>Lista de empresas:</h1>
 
     <ul>
-        <%
-            List<Empresa> lista = (List<Empresa>)request.getAttribute("empresas");
-            for (Empresa empresa : lista) {
-        %>
-
-        <li><%= empresa.getNome() %></</li>
-
-        <%
-            }
-        %>
+        <c:forEach items="${empresas}" var="empresa">
+            <li>
+                ${empresa.nome}
+            </li>
+        </c:forEach>
     </ul>
 
 </body>
