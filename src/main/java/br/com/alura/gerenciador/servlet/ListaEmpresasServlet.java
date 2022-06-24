@@ -15,6 +15,8 @@ public class ListaEmpresasServlet extends HttpServlet {
 
     @Override
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        System.out.println("SERVICE | Listando todas as empresas");
+
         Banco banco = new Banco();
         List<Empresa> lista = banco.getEmpresas();
         req.setAttribute("empresas", lista);
