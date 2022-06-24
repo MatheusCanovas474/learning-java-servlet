@@ -14,7 +14,7 @@ import java.util.List;
 public class ListaEmpresasServlet extends HttpServlet {
 
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         Banco banco = new Banco();
         List<Empresa> lista = banco.getEmpresas();
         req.setAttribute("empresas", lista);
