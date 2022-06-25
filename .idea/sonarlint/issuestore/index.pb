@@ -1,6 +1,4 @@
 
-O
-src/main/webapp/WEB-INF/web.xml,2\e\2e22b6edd746fa3dc40ad7276c87c8d87d72a392
 N
 src/main/webapp/bem-vindo.html,8\d\8d802029f04135e8c4541fec3410882bbfd036fb
 7
