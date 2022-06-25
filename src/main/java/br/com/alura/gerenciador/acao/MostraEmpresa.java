@@ -11,7 +11,7 @@ import java.io.IOException;
 
 public class MostraEmpresa {
 
-    public void executa(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    public String executa(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         Integer id = Integer.valueOf(req.getParameter("id"));
 
         Banco banco = new Banco();
@@ -19,8 +19,7 @@ public class MostraEmpresa {
         Empresa empresa = banco.buscaEmpresaById(id);
 
         req.setAttribute("empresa", empresa);
-        RequestDispatcher requestDispatcher = req.getRequestDispatcher("/formEditarEmpresa.jsp");
-        requestDispatcher.forward(req, resp);
+        return "forward:formEditarEmpresa.jsp";
     }
 
 }

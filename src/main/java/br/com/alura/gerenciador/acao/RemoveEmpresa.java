@@ -10,7 +10,7 @@ import java.util.List;
 
 public class RemoveEmpresa {
 
-    public void executa(HttpServletRequest req, HttpServletResponse resp) throws IOException {
+    public String executa(HttpServletRequest req, HttpServletResponse resp) throws IOException {
         System.out.println("SERVICE | Removendo empresa da lista");
 
         Banco banco = new Banco();
@@ -25,7 +25,7 @@ public class RemoveEmpresa {
 
         req.setAttribute("empresas", empresas);
 
-        resp.sendRedirect("entrada?acao=ListaEmpresa");
+        return "redirect:entrada?acao=ListaEmpresa";
     }
 
 }

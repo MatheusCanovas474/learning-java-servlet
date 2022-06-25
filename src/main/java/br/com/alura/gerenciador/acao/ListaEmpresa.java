@@ -12,13 +12,12 @@ import java.util.List;
 
 public class ListaEmpresa {
 
-    public void executa(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    public String executa(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         Banco banco = new Banco();
         List<Empresa> lista = banco.getEmpresas();
         req.setAttribute("empresas", lista);
 
-        RequestDispatcher requestDispatcher = req.getRequestDispatcher("/listaEmpresas.jsp");
-        requestDispatcher.forward(req, resp);
+        return "forward:listaEmpresas.jsp";
     }
 
 

@@ -13,7 +13,7 @@ import java.util.Date;
 
 public class NovaEmpresa {
 
-    public void executa(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    public String executa(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         System.out.println("SERVICE | Cadastrando nova empresa!");
 
@@ -37,8 +37,7 @@ public class NovaEmpresa {
 
         req.setAttribute("empresa", empresa.getNome());
 
-        resp.sendRedirect("entrada?acao=ListaEmpresa");
-
+        return "redirect:entrada?acao=ListaEmpresa";
     }
 
 

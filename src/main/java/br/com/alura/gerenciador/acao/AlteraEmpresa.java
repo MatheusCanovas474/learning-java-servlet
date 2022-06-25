@@ -13,7 +13,7 @@ import java.util.Date;
 
 public class AlteraEmpresa {
 
-    public void executa(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    public String executa(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         Integer id = Integer.valueOf(req.getParameter("id"));
         String nomeEmpresa = req.getParameter("nome");
         String paramDataEmpresa = req.getParameter("data");
@@ -31,7 +31,7 @@ public class AlteraEmpresa {
         empresa.setNome(nomeEmpresa);
         empresa.setDataAbertura(dataAbertura);
 
-        resp.sendRedirect("entrada?acao=ListaEmpresa");
+        return "redirect:entrada?acao=ListaEmpresa";
     }
 
 }
