@@ -40,13 +40,18 @@ public class EntradaServlet extends HttpServlet {
 
             NovaEmpresa acao = new NovaEmpresa();
             responseJsp = acao.executa(req, resp);
+        }  else if(paramAcao.equals("NovaEmpresaForm")) {
+            log("SERVICE | Carregando formulario para registro de novas empresas!");
+
+            NovaEmpresaForm acao = new NovaEmpresaForm();
+            responseJsp = acao.executa(req, resp);
         } else {
             throw new IllegalArgumentException("Servico '" + paramAcao + "' nao suportado pela API.");
         }
 
         String[] responseTypeAndService = responseJsp.split(":");
         if(responseTypeAndService[0].equals("forward")) {
-            RequestDispatcher requestDispatcher = req.getRequestDispatcher("/" + responseTypeAndService[1]);
+            RequestDispatcher requestDispatcher = req.getRequestDispatcher("WEB-INF/views/" + responseTypeAndService[1]);
             requestDispatcher.forward(req, resp);
         } else {
             resp.sendRedirect(responseTypeAndService[1]);
