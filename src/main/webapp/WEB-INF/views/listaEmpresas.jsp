@@ -21,7 +21,7 @@
 </c:if>
 
 <h1>Lista de empresas:</h1>
-<a href="/gerenciador_war_exploded/formNovaEmpresa.jsp"> Nova Empresa </a>
+<a href="/gerenciador_war_exploded/entrada?acao=NovaEmpresaForm"> Nova Empresa </a>
 
 <ul>
     <c:forEach items="${empresas}" var="empresa">

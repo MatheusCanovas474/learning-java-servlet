@@ -11,9 +11,9 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class NovaEmpresa {
+public class NovaEmpresa implements Acao{
 
-    public String executa(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    public String run(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         System.out.println("SERVICE | Cadastrando nova empresa!");
 

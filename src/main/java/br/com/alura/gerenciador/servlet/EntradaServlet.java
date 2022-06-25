@@ -12,41 +12,15 @@ public class EntradaServlet extends HttpServlet {
     @Override
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String paramAcao = req.getParameter("acao");
+
+        String nomeDaClasse = "br.com.alura.gerenciador.acao." + paramAcao;
         String responseJsp = null;
-
-        if (paramAcao.equals("ListaEmpresa")) {
-            log("SERVICE | Listando empresas!");
-
-            ListaEmpresa acao = new ListaEmpresa();
-            responseJsp = acao.executa(req, resp);
-
-        } else if (paramAcao.equals("MostraEmpresa")) {
-            log("SERVICE | Mostrando empresas!");
-
-            MostraEmpresa acao = new MostraEmpresa();
-            responseJsp = acao.executa(req, resp);
-        } else if(paramAcao.equals("RemoveEmpresa")) {
-            log("SERVICE | Removendo empresas!");
-
-            RemoveEmpresa acao = new RemoveEmpresa();
-            responseJsp = acao.executa(req, resp);
-        } else if(paramAcao.equals("AlteraEmpresa")) {
-            log("SERVICE | Alterando empresas!");
-
-            AlteraEmpresa acao = new AlteraEmpresa();
-            responseJsp = acao.executa(req, resp);
-        } else if(paramAcao.equals("NovaEmpresa")) {
-            log("SERVICE | Registrando novas empresas!");
-
-            NovaEmpresa acao = new NovaEmpresa();
-            responseJsp = acao.executa(req, resp);
-        }  else if(paramAcao.equals("NovaEmpresaForm")) {
-            log("SERVICE | Carregando formulario para registro de novas empresas!");
-
-            NovaEmpresaForm acao = new NovaEmpresaForm();
-            responseJsp = acao.executa(req, resp);
-        } else {
-            throw new IllegalArgumentException("Servico '" + paramAcao + "' nao suportado pela API.");
+        try {
+           Class classe = Class.forName(nomeDaClasse);
+           Acao acao = (Acao) classe.newInstance();
+           responseJsp = acao.run(req, resp);
+        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException e) {
+            throw new ServletException(e);
         }
 
         String[] responseTypeAndService = responseJsp.split(":");
@@ -56,5 +30,41 @@ public class EntradaServlet extends HttpServlet {
         } else {
             resp.sendRedirect(responseTypeAndService[1]);
         }
+
+
+//        if (paramAcao.equals("ListaEmpresa")) {
+//            log("SERVICE | Listando empresas!");
+//
+//            ListaEmpresa acao = new ListaEmpresa();
+//            responseJsp = acao.executa(req, resp);
+//
+//        } else if (paramAcao.equals("MostraEmpresa")) {
+//            log("SERVICE | Mostrando empresas!");
+//
+//            MostraEmpresa acao = new MostraEmpresa();
+//            responseJsp = acao.executa(req, resp);
+//        } else if(paramAcao.equals("RemoveEmpresa")) {
+//            log("SERVICE | Removendo empresas!");
+//
+//            RemoveEmpresa acao = new RemoveEmpresa();
+//            responseJsp = acao.executa(req, resp);
+//        } else if(paramAcao.equals("AlteraEmpresa")) {
+//            log("SERVICE | Alterando empresas!");
+//
+//            AlteraEmpresa acao = new AlteraEmpresa();
+//            responseJsp = acao.executa(req, resp);
+//        } else if(paramAcao.equals("NovaEmpresa")) {
+//            log("SERVICE | Registrando novas empresas!");
+//
+//            NovaEmpresa acao = new NovaEmpresa();
+//            responseJsp = acao.executa(req, resp);
+//        }  else if(paramAcao.equals("NovaEmpresaForm")) {
+//            log("SERVICE | Carregando formulario para registro de novas empresas!");
+//
+//            NovaEmpresaForm acao = new NovaEmpresaForm();
+//            responseJsp = acao.executa(req, resp);
+//        } else {
+//            throw new IllegalArgumentException("Servico '" + paramAcao + "' nao suportado pela API.");
+//        }
     }
 }

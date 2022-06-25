@@ -8,9 +8,9 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-public class RemoveEmpresa {
+public class RemoveEmpresa implements Acao{
 
-    public String executa(HttpServletRequest req, HttpServletResponse resp) throws IOException {
+    public String run(HttpServletRequest req, HttpServletResponse resp) throws IOException {
         System.out.println("SERVICE | Removendo empresa da lista");
 
         Banco banco = new Banco();

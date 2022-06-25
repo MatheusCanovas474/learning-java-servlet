@@ -10,9 +10,9 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-public class ListaEmpresa {
+public class ListaEmpresa implements Acao{
 
-    public String executa(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    public String run(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         Banco banco = new Banco();
         List<Empresa> lista = banco.getEmpresas();
         req.setAttribute("empresas", lista);
