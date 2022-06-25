@@ -10,7 +10,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
 
-@WebServlet(name = "ListaEmpresasServlet", value = "/listaEmpresas")
+//@WebServlet(name = "ListaEmpresasServlet", value = "/listaEmpresas")
 public class ListaEmpresasServlet extends HttpServlet {
 
     @Override

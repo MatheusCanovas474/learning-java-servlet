@@ -14,7 +14,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-@WebServlet(name = "NovaEmpresaServlet", value = "/novaEmpresa")
+//@WebServlet(name = "NovaEmpresaServlet", value = "/novaEmpresa")
 public class NovaEmpresaServlet extends HttpServlet {
 
     @Override

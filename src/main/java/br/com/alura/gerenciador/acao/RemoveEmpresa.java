@@ -1,20 +1,16 @@
-package br.com.alura.gerenciador.servlet;
+package br.com.alura.gerenciador.acao;
 
 import br.com.alura.gerenciador.models.Banco;
 import br.com.alura.gerenciador.models.Empresa;
 
-import javax.servlet.*;
-import javax.servlet.http.*;
-import javax.servlet.annotation.*;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-//@WebServlet(name = "RemoveEmpresaServlet", value = "/removeEmpresa")
-public class RemoveEmpresaServlet extends HttpServlet {
+public class RemoveEmpresa {
 
-    @Override
-    protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
+    public void executa(HttpServletRequest req, HttpServletResponse resp) throws IOException {
         System.out.println("SERVICE | Removendo empresa da lista");
 
         Banco banco = new Banco();
@@ -29,6 +25,7 @@ public class RemoveEmpresaServlet extends HttpServlet {
 
         req.setAttribute("empresas", empresas);
 
-        resp.sendRedirect("listaEmpresas");
+        resp.sendRedirect("entrada?acao=ListaEmpresa");
     }
+
 }

@@ -17,21 +17,18 @@
 <body>
 
 <c:if test="${ not empty empresa }">
-    Empresa ${ empresa } cadastrada com sucesso!
-</c:if>
-
-<c:if test="${ empty empresa }">
-    Nenhuma empresa cadastrada até o momento!
+    Nova empresa ${ empresa } cadastrada com sucesso!
 </c:if>
 
 <h1>Lista de empresas:</h1>
+<a href="/gerenciador_war_exploded/formNovaEmpresa.jsp"> Nova Empresa </a>
 
 <ul>
     <c:forEach items="${empresas}" var="empresa">
         <li>
                 ${empresa.nome} - <fmt:formatDate value="${empresa.dataAbertura}" pattern="dd/MM/yyyy"/>
-                    <a href="/gerenciador_war_exploded/removeEmpresa?id=${empresa.id}"> Remover </a>
-                    <a href="/gerenciador_war_exploded/mostrarEmpresa?id=${empresa.id}"> Editar </a>
+                    <a href="/gerenciador_war_exploded/entrada?acao=RemoveEmpresa&id=${empresa.id}"> Remover </a>
+                    <a href="/gerenciador_war_exploded/entrada?acao=MostraEmpresa&id=${empresa.id}"> Editar </a>
         </li>
     </c:forEach>
 </ul>
