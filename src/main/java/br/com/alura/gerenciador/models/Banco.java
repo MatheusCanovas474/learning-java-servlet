@@ -6,7 +6,7 @@ import java.util.List;
 public class Banco {
 
     private static List<Empresa> empresas = new ArrayList<>();
-    private static Integer chaveSequencial = 1;
+    private static Integer chaveSequencial = 0;
 
     static {
         Empresa empresa = new Empresa();
@@ -30,5 +30,14 @@ public class Banco {
 
     public static List<Empresa> getEmpresas() {
         return Banco.empresas;
+    }
+
+    public Empresa buscaEmpresaById(Integer id) {
+        for (Empresa empresa :
+                empresas) {
+            if (id == empresa.getId())
+                return empresa;
+        }
+        return null;
     }
 }
