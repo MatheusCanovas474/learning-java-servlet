@@ -1,0 +1,9 @@
+
+™
+java:S1130"wRemove the declaration of thrown exception 'javax.servlet.ServletException', as it cannot be thrown from method's body.(ô¨ÜÎÿÿÿÿÿ8ÅÂÊ™0
+
+java:S1130"lRemove the declaration of thrown exception 'java.io.IOException', as it cannot be thrown from method's body.(ô¨ÜÎÿÿÿÿÿ8ÆÂÊ™0
+M
+java:S1172"+Remove this unused method parameter "resp".(ô¨ÜÎÿÿÿÿÿ8ÆÂÊ™0
+P
+java:S2209"5Change this instance-reference to a static reference.(øºâ…üÿÿÿÿ

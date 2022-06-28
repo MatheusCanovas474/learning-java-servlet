@@ -1,0 +1,8 @@
+
+‰
+java:S1130"lRemove the declaration of thrown exception 'java.io.IOException', as it cannot be thrown from method's body.(À¦¾î8ªÂÊ™0
+H
+java:S1172"+Remove this unused method parameter "resp".(À¦¾î8ªÂÊ™0
+Z	java:S106"9Replace this use of System.out or System.err by a logger.(«Œ¼»øÿÿÿÿ8¿Ä‘Ç™0
+W
+java:S2209"5Change this instance-reference to a static reference.(ˆÛêÒüÿÿÿÿ8ÁÄ‘Ç™0

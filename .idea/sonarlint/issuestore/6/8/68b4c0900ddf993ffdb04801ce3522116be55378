@@ -1,0 +1,11 @@
+
+N	java:S106"9Replace this use of System.out or System.err by a logger.(àÖì¾
+\
+java:S1989 "AHandle the "ServletException" thrown here in a "try/catch" block.(¨ööŠûÿÿÿÿ
+i
+java:S1989,"SHandle the following exception that could be thrown by "sendRedirect": IOException.(™Ü¬¡
+Q	java:S125."<This block of commented-out lines of code should be removed.(Ÿç»—
+R
+java:S1128"<Remove this unused import 'javax.servlet.RequestDispatcher'.(Ëöò¼
+b
+java:S1128"@Remove this unused import 'javax.servlet.annotation.WebServlet'.(™ì¢´þÿÿÿÿ8ŒüüÇ™0

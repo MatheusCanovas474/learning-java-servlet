@@ -1,0 +1,10 @@
+
+N	java:S106"9Replace this use of System.out or System.err by a logger.(±Â¥ô
+s
+java:S1989"XHandle the following exception that could be thrown by "valueOf": NumberFormatException.(ˆ“õ¿øÿÿÿÿ
+\
+java:S1989"AHandle the "ServletException" thrown here in a "try/catch" block.(¨ööŠûÿÿÿÿ
+i
+java:S1989%"SHandle the following exception that could be thrown by "sendRedirect": IOException.(™Ü¬¡
+W
+java:S1128"5Remove this unused import 'javax.servlet.annotation'.(…¥ääøÿÿÿÿ8‡©üÇ™0
